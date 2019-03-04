@@ -20,7 +20,7 @@ import (
 	"runtime"
 	"strings"
 
-	"aosp/soong/android"
+	"ctosp/soong/android"
 
 	"github.com/google/blueprint/proptools"
 )
@@ -118,7 +118,7 @@ type variableProperties struct {
 		}
 
 		// include custom variables
-		Aosp android.Product_variables
+		ctosp android.Product_variables
 	} `android:"arch_variant"`
 }
 
@@ -237,7 +237,7 @@ type productVariables struct {
 	VendorVars map[string]map[string]string `json:",omitempty"`
 
 	// include Custom variables
-	Aosp android.ProductVariables
+	ctosp android.ProductVariables
 }
 
 func boolPtr(v bool) *bool {
