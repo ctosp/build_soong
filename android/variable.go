@@ -118,7 +118,7 @@ type variableProperties struct {
 		}
 
 		// include custom variables
-		ctosp android.Product_variables
+		Aosp android.Product_variables
 	} `android:"arch_variant"`
 }
 
@@ -237,7 +237,7 @@ type productVariables struct {
 	VendorVars map[string]map[string]string `json:",omitempty"`
 
 	// include Custom variables
-	ctosp android.ProductVariables
+	Aosp android.ProductVariables
 }
 
 func boolPtr(v bool) *bool {
@@ -313,10 +313,10 @@ func doVariableMutation(mctx BottomUpMutatorContext, a *ModuleBase, variableValu
 
 		// Check that the variable was set for the product
 		val := valStruct.FieldByName(name)
-        if val.IsValid() && val.Kind() == reflect.Struct {
+		if val.IsValid() && val.Kind() == reflect.Struct {
 			doVariableMutation(mctx, a, variableValue, zeroValue, val)
-            continue
-        } else if !val.IsValid() || val.Kind() != reflect.Ptr || val.IsNil() {
+			continue
+		} else if !val.IsValid() || val.Kind() != reflect.Ptr || val.IsNil() {
 			continue
 		}
 
