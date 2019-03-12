@@ -639,7 +639,7 @@ func ApplySourceOverlays(ctx ModuleContext, directives string, allowedModules []
 	// Individual directive format is:
 	// <modulename>|<overlaydir>|<globwithinoverlaydir>
 	// Example:
-	// org.pixelexperience.keydisabler|device/oneplus/msm8998-common/keydisabler|**/*.java
+	// org.ctosp.keydisabler|device/oneplus/msm8998-common/keydisabler|**/*.java
 	// If there is a file match by multiple directives, the first wins.
 
 	// Create map of expanded glob paths (globwithinoverlaydir component only)
